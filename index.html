@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Justin 💌</title>
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#ffc0cb,#ff8fab);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.card{max-width:600px}
+button{
+  padding:15px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  margin:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="app"></div>
+
+<script>
+let step=0;
+const app=document.getElementById("app");
+
+function render(){
+const screens=[
+`<h1>⚠️ Advertencia</h1>
+<p>Este sitio contiene niveles peligrosos de coqueteo.</p>
+<button onclick="next()">Entrar bajo mi propio riesgo</button>`,
+
+`<h1>Hola Justin 🙂</h1>
+<p>Solo llevamos un mes conociéndonos…</p>
+<p>pero me gusta mucho hablar contigo y que estés en mi día.</p>
+<button onclick="next()">Siguiente pista</button>`,
+
+`<h1>Experimento científico 🔬</h1>
+<p>Haz click para ver cuántas veces pienso en ti</p>
+<button onclick="next()">Calcular</button>`,
+
+`<h1 style="font-size:60px">99999999+</h1>
+<p>Probablemente es un bug 😌</p>
+<button onclick="next()">Último nivel</button>`,
+
+`<h1>Pregunta importante 💌</h1>
+<p>¿Quieres ser mi San Valentín versión larga distancia?</p>
+<button onclick="yes()">Sí 💖</button>
+<button onclick="yes()">Obvio sí 😌</button>`,
+
+`<h1>YAY 🥰</h1>
+<p>Oficialmente eres mi San Valentín.</p>
+<p>Prepárate para muchos besitos virtuales 😘</p>`
+];
+
+app.innerHTML=screens[step];
+}
+
+function next(){ step++; render(); }
+function yes(){ step=5; render(); }
+
+render();
+</script>
+
+</body>
+</html>
